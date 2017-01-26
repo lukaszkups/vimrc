@@ -3,34 +3,39 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 "vim plugin list
+
+" plugin that shows functions/classes/etc. in right sidebar
 Bundle 'majutsushi/tagbar'
-Plugin 'gmarik/Vundle.vim'  "this is required for vim bundler
+" required to use Vundle
+Plugin 'gmarik/Vundle.vim'
+" plugin that provides smart auto-tabs
 Plugin 'godlygeek/tabular'
+" javascript syntax support for vim
 Plugin 'jelera/vim-javascript-syntax'
+" plugin that provides autocompletion support
+Plugin 'ervandew/supertab'
+" CSS syntax support for vim
+Plugin 'vim-scripts/Better-CSS-Syntax-for-Vim'
+" markdown syntax support for vim
+Plugin 'plasticboy/vim-markdown'
 
-    Plugin 'ervandew/supertab'
+"Plugin 'wincent/command-t'
+"Plugin 'scrooloose/nerdcommenter'
+" plugin that provides auto closing HTML tags
+"Plugin 'docunext/closetag.vim'
 
-    Plugin 'vim-scripts/Better-CSS-Syntax-for-Vim'
-
-    Plugin 'plasticboy/vim-markdown'
-
-    Plugin 'wincent/command-t'
-
-    Plugin 'scrooloose/nerdcommenter'
-
-    Plugin 'docunext/closetag.vim'
-
-    Plugin 'godlygeek/csapprox'
-
-    Plugin 'scrooloose/nerdtree'
+" plugin that provides support for transparency colors (theme-related) in vim
+Plugin 'godlygeek/csapprox'
+" NERDtree plugin for filesystem left sidebar
+Plugin 'scrooloose/nerdtree'
 
     Plugin 'mattn/emmet-vim'
 
-    Plugin 'dunckr/vim-monokai-soda'
-
     Plugin 'vim-airline/vim-airline'
+    
+    Plugin 'altercation/vim-colors-solarized'
 
-    Plugin 'dikiaap/minimalist'
+    Plugin 'jacoborus/tender'
 
     Plugin 'yonchu/accelerated-smooth-scroll'
 
@@ -39,8 +44,6 @@ Plugin 'jelera/vim-javascript-syntax'
     set fillchars+=stl:\ ,stlnc:\ "
 
     autocmd vimenter * NERDTree
-
-    colorscheme minimalist
 
     set tabstop=2
 
@@ -51,10 +54,6 @@ Plugin 'jelera/vim-javascript-syntax'
     set expandtab
 
     set number
-
-    set t_Co=256
-
-    syntax enable
 
     set autoindent
 
@@ -72,10 +71,18 @@ Plugin 'jelera/vim-javascript-syntax'
 
     set hidden
 
-    syntax on
+    syntax enable
+
+    "set background=dark
+   
+    set t_Co=256
+
+    "let g:solarized_termcolors=256
+
+    colorscheme tender
 
     set scrolloff=8
-
+    
     set backup
 
     set backupdir=~/.vim/backups/tmp
