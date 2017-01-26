@@ -23,6 +23,8 @@ Plugin 'vim-scripts/Better-CSS-Syntax-for-Vim'
 Plugin 'plasticboy/vim-markdown'
 " plugin that provides support for transparency colors (theme-related) in vim
 Plugin 'godlygeek/csapprox'
+" plugin that provides quick closing HTML tags
+Plugin 'docunext/closetag.vim'
 " NERDtree plugin for filesystem left sidebar
 Plugin 'scrooloose/nerdtree'
 " plugin that provides fancy infobar at the bottom of the vim
@@ -71,11 +73,6 @@ set t_Co=256
 colorscheme tender
 " this keeps cursor almost always in the middle of the vim screen
 set scrolloff=20
-" backup file options
-"set backup
-"set backupdir=~/.vim/backups/tmp
-" swap file options
-"set dir=~/.vim/swaps/tmp
 " fix for slow scroll in large files
 set ttyfast
 " add current line highlight (may cause scroll lag)
