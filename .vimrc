@@ -33,6 +33,11 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'jacoborus/tender'
 " plugin that provides better scrolling experience in vim
 Plugin 'yonchu/accelerated-smooth-scroll'
+" plugin for js autocompletion 
+Plugin 'Valloric/YouCompleteMe'
+" after installing YouCompleteMe plugin You need to compile the main core:
+"   cd ~/.vim/bundle/YouCompleteMe
+"   ./install.py --all
 
 
 "vim's plugins additional config
@@ -85,6 +90,10 @@ set nobackup
 set noswapfile
 " fix for slow redraw
 set lazyredraw
+" set python path for YouCompleteMe plugin
+let g:ycm_server_python_interpreter = '/usr/bin/python'
+" YouCompleteMe autoclosing
+let g:ycm_autoclose_preview_window_after_completion=1
 " airline bottom information bar additional configuration
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#tagbar#flags = 'f'
