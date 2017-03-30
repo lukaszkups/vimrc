@@ -33,6 +33,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'jacoborus/tender'
 " plugin that provides better scrolling experience in vim
 Plugin 'yonchu/accelerated-smooth-scroll'
+" plugin for closing buffers and not switching to NERDTree
+Plugin 'rbgrouleff/bclose.vim'
 " plugin for js autocompletion 
 Plugin 'Valloric/YouCompleteMe'
 " after installing YouCompleteMe plugin You need to compile the main core:
@@ -47,6 +49,8 @@ Plugin 'Valloric/YouCompleteMe'
 set fillchars+=stl:\ ,stlnc:\ "
 " launch NERDtree plugin on vim start
 autocmd vimenter * NERDTree
+" ignore given filetypes in NERDTree
+let NERDTreeIgnore = ['\.pyc$']
 " set tab sizing 
 set tabstop=2
 set shiftwidth=2
@@ -98,6 +102,10 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#tagbar#flags = 'f'
 let g:airline#extensions#tabline#enabled = 1
+" set paste for pasting without extra tabs
+" set noai
+" set paste
+" set clipboard=unnamed
 
 
 " vim custom keymap
@@ -135,5 +143,7 @@ nnoremap <C-[><C-]> <C-w><C-w>
 nnoremap <Delete> <Delete>i
 " hit Enter key to clear search results highlights
 nnoremap <CR> :noh<CR><CR>
-"close current buffer/tab
-nnoremap qq :bd<CR>
+" close currend buffer but stay in current tab and open previous/existing buffer
+nnoremap qq :Bclose<CR>
+" jump to the end of the file
+nnoremap ff G
