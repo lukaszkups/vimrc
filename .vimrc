@@ -40,7 +40,10 @@ Plugin 'Valloric/YouCompleteMe'
 " after installing YouCompleteMe plugin You need to compile the main core:
 "   cd ~/.vim/bundle/YouCompleteMe
 "   ./install.py --all
-
+" Vue.js syntax highlighting
+Plugin 'posva/vim-vue'
+" emmet plugin for fast development
+Plugin 'mattn/emmet-vim'
 
 "vim's plugins additional config
 
@@ -89,7 +92,9 @@ set cursorline
 " set temp directory
 set directory=~/.vim/tmp
 " set backup off
-set nobackup
+" set nobackup
+" line below solves webpack hot reloading issues
+set backupcopy=yes
 " set swap off
 set noswapfile
 " fix for slow redraw
@@ -147,3 +152,6 @@ nnoremap <CR> :noh<CR><CR>
 nnoremap qq :Bclose<CR>
 " jump to the end of the file
 nnoremap ff G
+" expand emmet shortcut on tab key
+let g:user_emmet_expandabbr_key='<Tab>'
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
